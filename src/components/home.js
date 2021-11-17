@@ -10,7 +10,6 @@ import { Box } from '@mui/system';
 //     width: '100%',
 //     margin: '0px'
 //   },
-
 // }));
 
 const listName = ["Jurgen Bucuku", "Enea Aliko", "Endri", "Andi", "Jurgen Bucuku", "Enea Aliko", "Endri", "Andi"]
