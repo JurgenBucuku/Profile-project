@@ -12,6 +12,7 @@ import { Box } from '@mui/system';
 //   },
 // }));
 
+
 const listName = ["Jurgen Bucuku", "Enea Aliko", "Endri", "Andi", "Jurgen Bucuku", "Enea Aliko", "Endri", "Andi"]
 
 const Home = () => {
@@ -36,8 +37,11 @@ const Home = () => {
       <div>
         <input type='text' placeholder='Search....' onChange={(e) => onSearchName(e.target.value)} />
       </div>
-      <flexbox sx={{ flexDirection: 'row', display: 'flex', flexWrap: 'wrap', p: 1, m: 1, bgcolor: 'background.paper', maxWidth: 300 }} >
-        {listNames.map(item => <Friendly name={item} />)}
+      <flexbox sx={{ flexDirection: 'row', display: 'flex', 
+      flexWrap: 'wrap', p: 1, m: 1,
+       bgcolor: 'background.paper', maxWidth: 300 }} >
+
+        {listNames.map(item => <Friendly name={item}  />)}
       </flexbox>
     </Box>
   )
