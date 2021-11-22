@@ -21,7 +21,6 @@ function Friendly(props) {
             <Avatar img={props.img}/>
             <UserName name={props.name}/>
             <GetConnected deleteClick={props.deleteClick}/>
-            
         </div>
     )
 }

@@ -9,20 +9,21 @@ const listName = FriendsData
 
 const Home = () => {
 
-  console.log(listName)
-  const [listNames, setListNames] = useState(listName)
+  const [listNames] = useState(listName)
   const [wordEntered, setWordEntered] = useState("");
   const [listFilter, setListFilter] = useState(listNames);
 
-
   const onSearchName = (value) => {
-
+    
     setWordEntered(value)
-
+    
     if (value !== '') {
       const results = listFilter.filter((item) => {
+
         return item.name.toLowerCase().includes(value.toLowerCase());
       });
+      //console.log(results)
+
       setListFilter(results);
     }
     else {
@@ -31,7 +32,7 @@ const Home = () => {
   }
 
   const clearInput = () => {
-    setListNames(listNames)
+    setListFilter(listNames)
     setWordEntered("");
   };
 
@@ -54,18 +55,17 @@ const Home = () => {
       <div>
         <button className="btn-add">Add Friend</button>
         <input type='text' placeholder='Search....' value={wordEntered} onChange={(e) => onSearchName(e.target.value)} />
-        {listNames.length === 0 ? (
+        {listFilter.length === 0 ? (
           <SearchIcon />
         ) : (
           <CloseIcon id="clearBtn" onClick={clearInput} />
         )}
       </div>
-
-
-      {listFilter.map(item => <Friendly key={item.id} name={item.name} img={item.img} deleteClick={(e) => handleDelete(item.id)} />
-       
+      {listFilter.map(item => <Friendly key={item.id}
+        name={item.name}
+        img={item.img}
+        deleteClick={() => handleDelete(item.id)} />
       )}
-
     </Box>
   )
 }
