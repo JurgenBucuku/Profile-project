@@ -13,6 +13,7 @@ const Home = () => {
   const [listNames, setListNames] = useState(listName)
   const [wordEntered, setWordEntered] = useState("");
 
+
   const onSearchName = (value) => {
 
     setWordEntered(value)
@@ -32,23 +33,37 @@ const Home = () => {
     setListNames(listName)
     setWordEntered("");
   };
+
+  // addFriend(e){
+  //   e.preventDefault();
+
+  // }
+
+  const handleDelete = (id) => {
+    const newList = listName.filter(item => item.id !== id);
+    setListNames(newList)
+  }
  
   return (
     <Box>
       <div>
+      <button className="btn-add">Add Friend</button>
         <input type='text' placeholder='Search....' value={wordEntered} onChange={(e) => onSearchName(e.target.value)} />
         {listNames.length === 0 ? (
             <SearchIcon />
           ) : (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
-      </div>
-      <flexbox sx={{ flexDirection: 'row', display: 'flex', 
-      flexWrap: 'wrap', p: 1, m: 1,
-       bgcolor: 'background.paper', maxWidth: 300 }} >
 
-        {listNames.map(item => <Friendly key={item.id} name={item.name} img={item.img}  />)}
-      </flexbox>
+          
+      </div>
+      
+
+        {listNames.map(item => ( <div key={item.id}><Friendly key={item.id} name={item.name} img={item.img}  />
+        <button onClick={() => handleDelete(item.id)}>Delete</button>
+        </div>
+        ))}
+      
     </Box>
   )
 

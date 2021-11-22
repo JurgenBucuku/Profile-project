@@ -15,9 +15,7 @@ function Avatar(props){
     }
 
     return(
-     
         <img src={props.img} alt="profile pic" style={avatarStyle}/>
-     
     )
 }
 

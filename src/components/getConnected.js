@@ -1,6 +1,7 @@
 import Like from "./like"
 import Share from "./share"
 import Add from "./add"
+import Delete from "./delete"
 
 function GetConnected(){
     
@@ -9,6 +10,7 @@ function GetConnected(){
             <Like/>
             <Share/>
             <Add/>
+            <Delete />
         </div>
     )
 }

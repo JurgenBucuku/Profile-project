@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 function Like() {
 
     var iconStyle = {
-        margin: 20,
+        margin: 15,
     }
     return (
             <FontAwesomeIcon icon={faThumbsUp} style={iconStyle}/>

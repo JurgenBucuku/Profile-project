@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 function Share() {
 
     var iconStyle = {
-        margin: 20,
+        margin: 15,
         
         
     }
     return (
-
         <FontAwesomeIcon icon={faShare} style={iconStyle}/>
     )
 }

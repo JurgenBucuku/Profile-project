@@ -19,6 +19,6 @@
     { "id": 5, "name": "Josh", "gender": "male", "img": "https://miro.medium.com/max/400/0*0nRmSEV8ge3yq9I2.jpg" },
     { "id": 6, "name": "Kenny", "gender": "female", "img": "https://p1.pxfuel.com/preview/236/108/1005/girl-woman-female-beauty.jpg" },
     { "id": 7, "name": "Jurgen", "gender": "male", "img": "https://yt3.ggpht.com/ytc/AKedOLSWvOoUQJZnZhQ2LmlvzjRcPLU4bGS7kU4xhqBv=s88-c-k-c0x00ffffff-no-rj" },
-    { "id": 8, "name": "Enea", "gender": "female", "img": "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" }
+    { "id": 8, "name": "Ana", "gender": "female", "img": "https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" }
     
 ]

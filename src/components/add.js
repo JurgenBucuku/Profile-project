@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 //Add component
 function Add() {
     var iconStyle = {
-        margin: 20,
+        margin: 15,
     }
     return (
         
