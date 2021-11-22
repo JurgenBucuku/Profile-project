@@ -12,6 +12,7 @@ const Home = () => {
   console.log(listName)
   const [listNames, setListNames] = useState(listName)
   const [wordEntered, setWordEntered] = useState("");
+  const [listFilter, setListFilter] = useState(listNames);
 
 
   const onSearchName = (value) => {
@@ -19,18 +20,18 @@ const Home = () => {
     setWordEntered(value)
 
     if (value !== '') {
-      const results = listName.filter((item) => {
+      const results = listFilter.filter((item) => {
         return item.name.toLowerCase().includes(value.toLowerCase());
       });
-      setListNames(results);
+      setListFilter(results);
     }
     else {
-      setListNames(listName)
+      setListFilter(listFilter)
     }
   }
 
   const clearInput = () => {
-    setListNames(listName)
+    setListNames(listNames)
     setWordEntered("");
   };
 
@@ -40,33 +41,33 @@ const Home = () => {
   // }
 
   const handleDelete = (id) => {
-    const newList = listName.filter(item => item.id !== id);
-    setListNames(newList)
+    console.log(id)
+
+    const newList = listFilter.filter(item => item.id !== id);
+    console.log(newList)
+
+    setListFilter(newList)
   }
- 
+
   return (
     <Box>
       <div>
-      <button className="btn-add">Add Friend</button>
+        <button className="btn-add">Add Friend</button>
         <input type='text' placeholder='Search....' value={wordEntered} onChange={(e) => onSearchName(e.target.value)} />
         {listNames.length === 0 ? (
-            <SearchIcon />
-          ) : (
-            <CloseIcon id="clearBtn" onClick={clearInput} />
-          )}
-
-          
+          <SearchIcon />
+        ) : (
+          <CloseIcon id="clearBtn" onClick={clearInput} />
+        )}
       </div>
-      
 
-        {listNames.map(item => ( <div key={item.id}><Friendly key={item.id} name={item.name} img={item.img}  />
-        <button onClick={() => handleDelete(item.id)}>Delete</button>
-        </div>
-        ))}
-      
+
+      {listFilter.map(item => <Friendly key={item.id} name={item.name} img={item.img} deleteClick={(e) => handleDelete(item.id)} />
+       
+      )}
+
     </Box>
   )
-
 }
 
 export default Home

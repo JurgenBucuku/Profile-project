@@ -20,7 +20,7 @@ function Friendly(props) {
         <div style={friendlyStyle}>
             <Avatar img={props.img}/>
             <UserName name={props.name}/>
-            <GetConnected />
+            <GetConnected deleteClick={props.deleteClick}/>
             
         </div>
     )

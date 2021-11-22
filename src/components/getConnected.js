@@ -3,14 +3,14 @@ import Share from "./share"
 import Add from "./add"
 import Delete from "./delete"
 
-function GetConnected(){
+function GetConnected({deleteClick}){
     
     return(
         <div>
             <Like/>
             <Share/>
             <Add/>
-            <Delete />
+            <Delete deleteClick={deleteClick} />
         </div>
     )
 }
