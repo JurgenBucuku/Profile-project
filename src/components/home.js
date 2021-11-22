@@ -2,7 +2,8 @@ import Friendly from "./friendly";
 import React, { useState } from 'react';
 import { Box } from '@mui/system';
 import FriendsData from "./Data.json";
-
+import SearchIcon from "@material-ui/icons/Search";
+import CloseIcon from "@material-ui/icons/Close";
 
 const listName = FriendsData
 
@@ -10,9 +11,11 @@ const Home = () => {
 
   console.log(listName)
   const [listNames, setListNames] = useState(listName)
-  //const [wordEntered, setWordEntered] = useState("");
+  const [wordEntered, setWordEntered] = useState("");
 
   const onSearchName = (value) => {
+
+    setWordEntered(value)
 
     if (value !== '') {
       const results = listName.filter((item) => {
@@ -25,12 +28,20 @@ const Home = () => {
     }
   }
 
+  const clearInput = () => {
+    setListNames(listName)
+    setWordEntered("");
+  };
  
   return (
     <Box>
       <div>
-        <input type='text' placeholder='Search....'  onChange={(e) => onSearchName(e.target.value)} />
-
+        <input type='text' placeholder='Search....' value={wordEntered} onChange={(e) => onSearchName(e.target.value)} />
+        {listNames.length === 0 ? (
+            <SearchIcon />
+          ) : (
+            <CloseIcon id="clearBtn" onClick={clearInput} />
+          )}
       </div>
       <flexbox sx={{ flexDirection: 'row', display: 'flex', 
       flexWrap: 'wrap', p: 1, m: 1,
